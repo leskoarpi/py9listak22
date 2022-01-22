@@ -14,16 +14,7 @@ Egészítsd ki úgy a programot, hogy a felhasználó megadhasson egy koordinát
 '''
 
 tarolo = []
-
-def listToString(i): 
-    str1 = " " 
-    return (str1.join(i))
-
-#for i in range(3):
-#   tarolo.append(['O ' for szam in range(3)])
-
 fuggoleges =int(input('adj szamot(0-2)'))
-
 if fuggoleges > 2:
     fuggoleges = 1 
     print('a megadott szam nagyobb mint 2 \n Az alapertelmezett szamra lett allitva (1)')
@@ -32,14 +23,15 @@ if vizszintes > 2:
     vizszintes = 1 
     print('a megadott szam nagyobb mint 2 \n Az alapertelmezett szamra lett allitva (1)')
 
-for sor in range(3):
-        for oszlop in range(3):
-            if oszlop == fuggoleges and vizszintes == sor:
-                print('+ ', end='')
-                
-            else:
-                print('O ', end='')
-        print()
+for i in range(3):
+   tarolo.append(['O ' for szam in range(3)])
+
+tarolo[fuggoleges][vizszintes] = tarolo[fuggoleges][vizszintes].replace('O ', '+ ')
+
+
+def listToString(i): 
+    str1 = " " 
+    return (str1.join(i))
 
 def ooo():
     for i in tarolo:
